@@ -1,0 +1,83 @@
+﻿@model OpdrachtFrameworks.Models.Immo
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Immo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="naam" class="control-label"></label>
+                <input asp-for="naam" class="form-control" />
+                <span asp-validation-for="naam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="straat" class="control-label"></label>
+                <input asp-for="straat" class="form-control" />
+                <span asp-validation-for="straat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="description" class="control-label"></label>
+                <input asp-for="description" class="form-control" />
+                <span asp-validation-for="description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="huisnummer" class="control-label"></label>
+                <input asp-for="huisnummer" class="form-control" />
+                <span asp-validation-for="huisnummer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="gemeente" class="control-label"></label>
+                <input asp-for="gemeente" class="form-control" />
+                <span asp-validation-for="gemeente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="prijs" class="control-label"></label>
+                <input asp-for="prijs" class="form-control" />
+                <span asp-validation-for="prijs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="bouwjaar" class="control-label"></label>
+                <input asp-for="bouwjaar" class="form-control" />
+                <span asp-validation-for="bouwjaar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="kamers" class="control-label"></label>
+                <input asp-for="kamers" class="form-control" />
+                <span asp-validation-for="kamers" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="grootte" class="control-label"></label>
+                <input asp-for="grootte" class="form-control" />
+                <span asp-validation-for="grootte" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tuin" class="control-label"></label>
+                <input asp-for="tuin" class="form-control" />
+                <span asp-validation-for="tuin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="type" class="control-label"></label>
+                <input asp-for="type" class="form-control" />
+                <span asp-validation-for="type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

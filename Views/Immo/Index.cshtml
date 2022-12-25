@@ -1,0 +1,104 @@
+﻿@model IEnumerable<OpdrachtFrameworks.Models.Immo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Immo Catalogus</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<p>
+    <form asp-action="Index" asp-controller="Immo" method="get">
+        Selecteer: 
+        <input type="text" name="searchField" />
+        <input type="submit" name="Filter" text="Search"/>
+
+    </form>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.naam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.straat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.huisnummer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.gemeente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.prijs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bouwjaar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.kamers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.grootte)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tuin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.type)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.naam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.straat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.huisnummer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gemeente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.prijs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.bouwjaar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kamers)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.grootte)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tuin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.type)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
